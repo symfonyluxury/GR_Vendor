@@ -1,0 +1,26 @@
+{% form_theme form 'ToaTwitterBootstrapBundle:Form:widgets.html.twig' %}
+
+{% extends 'GaorenVendorsBundle::layout.html.twig' %}
+{% block title %}新建产品{% endblock %}
+{% block content %}
+
+<h1 class="page-header">新建产品</h1>
+
+<form class="form-horizontal" action="{{ path('product_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button class="btn" type="submit">
+            <i class="icon-plus"></i>
+            {{ 'create'|trans }}
+        </button>
+    </p>
+</form>
+
+
+
+    <a class="btn" href="{{ path('product') }}">
+        <i class="icon-th-list"></i>
+        {{ 'back to the list'|trans }}
+    </a>
+
+{% endblock %}

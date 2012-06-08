@@ -1,0 +1,15 @@
+{% extends 'GaorenVendorsBundle::layout.html.twig' %}
+
+{% block title "用户登录页面" %}
+
+{% block content %}
+        {% for key, message in app.session.getFlashes() %}
+        <div class="{{ key }}">
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+        {% endfor %}
+        <div class="span5">
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+parameters:
+  
+services:
+    gaoren_vendor.my_provider:
+        class: Gaoren\VendorsBundle\Security\Provider\MyProvider
+        public: false
+        arguments: ["@fos_user.user_manager"]

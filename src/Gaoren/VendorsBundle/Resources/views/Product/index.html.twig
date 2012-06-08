@@ -1,0 +1,48 @@
+{% extends 'GaorenVendorsBundle::layout.html.twig' %}
+{% block title %}产品列表{% endblock %}
+{% block content %}
+
+<h1 class="page-header">产品列表</h1>
+
+<table class="records_list table   table-striped">
+    <thead>
+        <tr>
+            <th><a>序号</a></th>
+            <th><a>名称</a></th>
+            <th><a>价格</a></th>
+            <th><a>描述</a></th>
+            <th><a>创建于</a></th>
+            <th><a>更新于</a></th>
+            <th><a>动作</a></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('product_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.name }}</td>
+            <td>{{ entity.price }}</td>
+            <td>{{ entity.description }}</td>
+            <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>
+                <a class="btn btn-mini" href="{{ path('product_show', { 'id': entity.id }) }}">
+                    <i class="icon-eye-open"></i>
+                    {{ 'show'|trans }}
+                </a>
+                <a class="btn btn-mini" href="{{ path('product_edit', { 'id': entity.id }) }}">
+                    <i class="icon-pencil"></i>
+                    {{ 'edit'|trans }}
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a class="btn" href="{{ path('product_new') }}">
+    <i class="icon-plus"></i>
+    {{ 'create a new entry'|trans }}
+</a>
+
+{% endblock %}

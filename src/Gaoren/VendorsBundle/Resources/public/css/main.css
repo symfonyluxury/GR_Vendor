@@ -1,0 +1,15 @@
+/* Custom CSS starts here*/
+body { 
+ background: url("/bundles/gaorenvendors/images/grids.gif");
+ display: block; z-index: 0 ;
+ font-family:微软雅黑;
+}
+body .container .row-fluid .span2 .sidebar-nav { 
+ /* padding: 17px 0;*/
+ height: 300px; 
+}
+.main-container { 
+ background: rgb(252,252,252);
+ padding: 10px;
+ margin: 0 20px;
+}

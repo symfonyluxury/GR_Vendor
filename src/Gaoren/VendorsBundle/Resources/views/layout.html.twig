@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+{% block nav %}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="{{ path('product')}}">Gaoren Vendors Project</a>
+              {% if(is_granted('IS_AUTHENTICATED_REMEMBERED'))  %}
+                 <div class="btn-group pull-right">
+                   <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                     <i class="icon-user"></i> 
+                     <span class="caret"></span>{{ app.user.username }}
+                   </a>
+                   <ul class="dropdown-menu">
+                     <li><a href="{{ path('fos_user_profile_show')}}">企业面板</a></li>
+                     <li class="divider"></li>
+                     <li><a href="{{path('fos_user_security_logout') }}">退出</a></li>
+                   </ul>
+                 </div>
+              {% endif %}
+          <ul class="nav pull-right">
+              <li class="active"><a href="{{ path('fos_user_registration_register')}}">注册</a></li>
+              <li class="divider-vertical"></li>
+            </ul>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="{{ path('product')}}">首页</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block container %}
+   <div class="container-fluid main-container ">
+      <div class="row-fluid">
+       {% if(is_granted('IS_AUTHENTICATED_REMEMBERED'))  %}
+       <div class="span2">
+        <div class="well sidebar-nav">
+         {{ knp_menu_render('GaorenVendorsBundle:Builder:mainMenu',{'currentClass':'active','allow_safe_labels':true}) }}
+        </div>
+       </div>
+       {% endif %}
+       <div class="span10">
+        {% block content %}{% endblock %}
+       </div>
+      </div> 
+     <hr>
+     <footer>
+      <p>© Gaoren 2012</p>
+     </footer>
+   </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% form_theme edit_form 'ToaTwitterBootstrapBundle:Form:widgets.html.twig' %}
+
+{% extends 'GaorenVendorsBundle::layout.html.twig' %}
+{% block title %}产品编辑{% endblock %}
+{% block content %}
+
+<h1 class="page-header">{{ 'Product'|trans }} {{ 'edit'|trans }}</h1>
+
+<form class="form-horizontal" action="{{ path('product_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button class="btn" type="submit">
+            <i class="icon-pencil"></i>
+            {{ 'edit'|trans }}
+        </button>
+    </p>
+</form>
+
+
+    <form action="{{ path('product_delete', { 'id': entity.id }) }}" method="post">
+        {{ form_widget(delete_form) }}
+        <button class="btn btn-danger" type="submit">
+            <i class="icon-trash"></i>
+            {{ 'delete'|trans }}
+        </button>
+    </form>
+
+    <a class="btn" href="{{ path('product') }}">
+        <i class="icon-th-list"></i>
+        {{ 'back to the list'|trans }}
+    </a>
+
+{% endblock %}
