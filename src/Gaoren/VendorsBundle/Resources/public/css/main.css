@@ -1,15 +1,126 @@
 /* Custom CSS starts here*/
 body { 
- background: url("/bundles/gaorenvendors/images/grids.gif");
- display: block; z-index: 0 ;
- font-family:微软雅黑;
+    background: url("/bundles/gaorenvendors/images/grids.gif");
+    display: block; z-index: 0 ;
+    font-family:微软雅黑;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
-body .container .row-fluid .span2 .sidebar-nav { 
- /* padding: 17px 0;*/
- height: 300px; 
+
+h1 { font-weight: 600}
+
+.navbar .brand {
+    color: #ffffff;
 }
+
+/* Sidebar styling starts here */
+.sidebar-nav { 
+    /* padding: 17px 0;*/
+    padding: 12px 0;
+    height: 250px; 
+}
+
+.sidebar-nav .nav-header {
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+/* Sidebar styling ends here */
+
+
+/* Container styling starts here */
 .main-container { 
- background: rgb(252,252,252);
- padding: 10px;
- margin: 0 20px;
+    background: rgb(252,252,252);
+    padding: 10px;
+    margin: 0 20px;
 }
+
+.main-container .right-container {
+    background: #EEEEEE;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.main-container .bubble {
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 10px 20px 20px;
+}
+
+/*-------Form-------*/
+.form-border {
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.071);
+}
+
+div.connection .form-stacked {
+    margin-bottom: 0px;
+    padding: 15px 20px 0;
+}
+
+div.connection .form-stacked .form-actions {
+    margin: 15px -20px 0;
+    padding-left: 20px;
+}
+
+div.connection .form-stacked label {
+    font-weight: 600;
+    line-height: 20px;
+    color: #404040;
+}
+
+div.connection .form-stacked .big-input {
+    width: 370px;
+    height: 35px;
+    font-size: 25px;
+    color: #808080;
+    padding: 3px 10px;
+}
+
+div.connection .form-registration input {
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+div.connection .form-registration .btn-long {
+    width: 100px;
+    padding: 16px 20px;
+}
+
+div.connection .form-login .btn-long {
+    width: 100px;
+    height: 30px;
+    padding: 16px 20px;
+    font-size: 16px;
+}
+
+div.connection .form-stacked .form-actions a {
+    padding: 7px 20px;
+    font-size: 16px;
+}
+
+div.connection form .alert-message{
+    text-align: left;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    width: 385px;
+    font-size: 13px;
+}
+
+.fos_user_user_show .success-message{
+    text-align: left;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    width: 340px;
+    font-size: 13px;
+}
+/*-------Form-------*/
+/* Container styling ends here */
+
+/* Footer styling ends here */
+footer {
+    margin-top: 80px;
+}
+/* Footer styling ends here */

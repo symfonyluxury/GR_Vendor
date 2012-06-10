@@ -4,23 +4,24 @@
 {% block title %}新建产品{% endblock %}
 {% block content %}
 
-<h1 class="page-header">新建产品</h1>
+<div class="right-container">
+    <div class="bubble">
+        <h1 class="page-header">新建产品</h1>
 
-<form class="form-horizontal" action="{{ path('product_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button class="btn" type="submit">
-            <i class="icon-plus"></i>
-            {{ 'create'|trans }}
-        </button>
-    </p>
-</form>
+        <form class="form-horizontal" action="{{ path('product_create') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_widget(form) }}
+            <p>
+                <button class="btn" type="submit">
+                    <i class="icon-plus"></i>
+                    {{ 'create'|trans }}
+                </button>
+            </p>
+        </form>
 
-
-
-    <a class="btn" href="{{ path('product') }}">
-        <i class="icon-th-list"></i>
-        {{ 'back to the list'|trans }}
-    </a>
-
+            <a class="btn" href="{{ path('product') }}">
+                <i class="icon-th-list"></i>
+                {{ 'back to the list'|trans }}
+            </a>
+    </div>
+</div>
 {% endblock %}

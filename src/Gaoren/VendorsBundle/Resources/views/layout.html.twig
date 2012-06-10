@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block nav %}
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="brand" href="{{ path('product')}}">Gaoren Vendors Project</a>
@@ -9,7 +9,8 @@
                  <div class="btn-group pull-right">
                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                      <i class="icon-user"></i> 
-                     <span class="caret"></span>{{ app.user.username }}
+                     {{ app.user.username }}
+                     <span class="caret"></span>
                    </a>
                    <ul class="dropdown-menu">
                      <li><a href="{{ path('fos_user_profile_show')}}">企业面板</a></li>
@@ -19,7 +20,7 @@
                  </div>
               {% endif %}
           <ul class="nav pull-right">
-              <li class="active"><a href="{{ path('fos_user_registration_register')}}">注册</a></li>
+              <li><a href="{{ path('fos_user_registration_register')}}">注册</a></li>
               <li class="divider-vertical"></li>
             </ul>
           <div class="nav-collapse">
@@ -34,21 +35,25 @@
 
 {% block container %}
    <div class="container-fluid main-container ">
-      <div class="row-fluid">
-       {% if(is_granted('IS_AUTHENTICATED_REMEMBERED'))  %}
-       <div class="span2">
-        <div class="well sidebar-nav">
-         {{ knp_menu_render('GaorenVendorsBundle:Builder:mainMenu',{'currentClass':'active','allow_safe_labels':true}) }}
-        </div>
-       </div>
-       {% endif %}
-       <div class="span10">
-        {% block content %}{% endblock %}
-       </div>
-      </div> 
-     <hr>
+     {% if(is_granted('IS_AUTHENTICATED_REMEMBERED'))  %}
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="well sidebar-nav">
+                    {{ knp_menu_render('GaorenVendorsBundle:Builder:mainMenu',{'currentClass':'active','allow_safe_labels':true}) }}
+                    </div>
+                </div>
+     {% else %}
+            <div class="row">     
+     {% endif %}
+                <div class="span10">        
+                    {% block content %}{% endblock %}
+                </div>
+            </div> 
+                    
      <footer>
-      <p>© Gaoren 2012</p>
+            <hr>
+            <p class="pull-right">© <a class="label label-important">Gaoren</a> 2012</p>
      </footer>
+     </div>
    </div>
 {% endblock %}

@@ -1,0 +1,96 @@
+# Group
+group:
+    edit:
+        submit: 更新组  #Update group
+    show:
+        name: 组名  #Group name
+    new:
+        submit: 创建组  #Create group
+    flash:
+        updated: 改组已更新 #The group has been updated
+        created: 改组已创建 #The group has been created
+        deleted: 改组已被删除 #The group has been deleted
+
+# Security
+"Bad credentials": 用户名(邮件地址) 或 密码错误 #Invalid username or password
+
+security:
+    login:
+        username: 用户名  #"Username:"
+        password: 密码  #"Password:"
+        remember_me: 记住我 #Remember me
+        submit: 登录  #Login
+
+# Profile
+profile:
+    show:
+        username: 用户名  #Username
+        email: 邮件地址 #Email
+    edit:
+        submit: 更新  #Update
+    flash:
+        updated: 账户更新成功!  #The profile has been updated
+
+# Password change
+change_password:
+    submit: 更改密码  #Change password
+    flash:
+        success: 更改密码成功!  #The password has been changed
+
+# Registration
+registration:
+    check_email: 邮件已发送至 %email%m, 请进入邮箱并点击链接激活账户.  #An email has been sent to %email%. It contains an activation link you must click to activate your account.
+    confirmed: 恭喜 %username%, 您的账户已被激活.#Congrats %username%, your account is now activated.
+    back: 返回首页  #Back to the originating page.
+    submit: 注册  #Register
+    flash:
+        user_created: 您的账户已成功创建! #The user has been created successfully
+    email:
+        subject: 欢迎 %username%  #Welcome %username%!
+        message: |
+            你好 %usernmae% #Hello %username%!
+
+            为了激活您的账户, 请访问该地址 %confirmationUrl%  #To finish activating your account - please visit %confirmationUrl%
+
+            祝好, #Regards,
+            高人Tech团队.  #the Team.
+
+# Password resetting
+resetting:
+    password_already_requested: 该密码已在过去24小时被某用户请求  #The password for this user has already been requested within the last 24 hours.
+    check_email: 邮件以发送至 %email%. 进入并点击链接重设您的密码 #An email has been sent to %email%. It contains a link you must click to reset your password.
+    request:
+        invalid_username: 该用户名或邮件地址不存在  #The username or email address "%username%" does not exist.
+        username: 用户名或邮件地址  #"Username or email address:"
+        submit: 重设密码  #Reset password
+    reset:
+        submit: 更改密码  #Change password
+    flash:
+        success: 您的密码已成功更改!  #The password has been reset successfully
+    email:
+        subject: 重设密码 #Reset Password
+        message: |
+            你好 %username% #Hello %username%!
+
+            为了重设您的密码, 请访问 %confirmationUrl%  #To reset your password - please visit %confirmationUrl%
+
+            祝好, #Regards,
+            高人Tech团队  #the Team.
+
+# Global strings
+layout:
+    logout: 退出  #Logout
+    login: 登录 #Login
+    register: 注册  #Register
+    logged_in_as: 用户 %username% #Logged in as %username%
+
+# Form field labels
+form:
+    group_name: 组名  #"Group name:"
+    username: 用户名  #"Username:"
+    email: 邮件地址 #"Email:"
+    current_password: 当前密码  #"Current Password:"
+    password: 密码  #"Password:"
+    password_confirmation: 密码确认 #"Verification:"
+    new_password: 新密码  #"New password:"
+    new_password_confirmation: 新密码确认 #"Verification:"

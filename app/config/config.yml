@@ -4,8 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
-    translator:      {fallback: cn}
+    translator:      { fallback: %locale% }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -16,6 +15,8 @@ framework:
     default_locale:  %locale%
     session:
         auto_start:     true
+        lifetime:        86400
+        domain:        vendors.au
 
 # Twig Configuration
 twig:
@@ -85,4 +86,15 @@ fos_user:
 knp_menu:
     twig: true
     default_renderer: twig
+    
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: GaorenVendorsBundle:Pagination:pagination.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
             

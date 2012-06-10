@@ -3,12 +3,18 @@
 {% block title "用户登录页面" %}
 
 {% block content %}
+
+        {% if(is_granted('IS_AUTHENTICATED_REMEMBERED')) %}
+            <div class="span5">
+        {% else %}
+            <div class="span5 offset3">  
+        {% endif %}
         {% for key, message in app.session.getFlashes() %}
-        <div class="{{ key }}">
-            {{ message|trans({}, 'FOSUserBundle') }}
-        </div>
+            <div class=" alert alert-success fade in">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ message|trans({}, 'FOSUserBundle') }}
+            </div>
         {% endfor %}
-        <div class="span5">
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>

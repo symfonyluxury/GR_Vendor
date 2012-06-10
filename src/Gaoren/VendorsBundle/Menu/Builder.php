@@ -18,13 +18,13 @@ class Builder extends ContainerAware
             $menu = $factory->createItem( 'menu' )->setChildrenAttribute( 'class', 'nav nav-list' );
             $menu->setCurrentUri( $this->container->get( 'request' )->getRequestUri() );
 
-            $menu->addChild( '企业面板' )->setAttribute( 'class', 'nav-header' );
-            $menu->addChild( '', array('route' => 'fos_user_profile_show') )->setLabel( '账户概要' );
-            $menu->addChild( '账户设置', array('route' => 'fos_user_profile_edit') );
-            $menu->addChild( '重设密码', array('route' => 'fos_user_change_password') );
-            $menu->addChild( '企业产品' )->setAttribute( 'class', 'nav-header' );
-            $menu->addChild( '产品列表', array('route' => 'product') );
-            $menu->addChild( '新建产品', array('route' => 'product_new') );
+            $menu->addChild( 'vendor_panel' )->setAttribute( 'class', 'nav-header li-header' )->setLabel( '公司信息' );
+            $menu->addChild( 'profile', array('route' => 'fos_user_profile_show') )->setExtra( 'safe_label', true )->setLabel( '<i class="icon-user"></i>账户概要' );
+            $menu->addChild( 'profile_setting', array('route' => 'fos_user_profile_edit') )->setExtra( 'safe_label', true )->setLabel( '<i class="icon-cog"></i>账户设置' );
+            $menu->addChild( 'resetting', array('route' => 'fos_user_change_password') )->setExtra( 'safe_label', true )->setLabel( '<i class="icon-lock"></i>重设密码' );
+            $menu->addChild( 'product' )->setAttribute( 'class', 'nav-header li-header' )->setLabel( '公司产品' );
+            $menu->addChild( 'product_list', array('route' => 'product') )->setExtra( 'safe_label', true )->setLabel( '<i class="icon-th-list"></i>产品列表' );
+            $menu->addChild( 'product_new', array('route' => 'product_new') )->setExtra( 'safe_label', true )->setLabel( '<i class="icon-plus-sign"></i>新建产品' );
 
             return $menu;
       }

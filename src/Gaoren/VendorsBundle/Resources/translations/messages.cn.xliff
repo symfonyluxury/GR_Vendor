@@ -20,7 +20,7 @@
             </trans-unit>
             <trans-unit id="5">
                 <source>create a new entry</source>
-                <target>新建一个产品</target>
+                <target>新建产品</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>back to the list</source>

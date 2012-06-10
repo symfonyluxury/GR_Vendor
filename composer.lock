@@ -1,5 +1,5 @@
 {
-    "hash": "064a09faf85730ecc8f7d1fa57b6a510",
+    "hash": "105078f3ef4dfb9b43d502baed263cb8",
     "packages": [
         {
             "package": "doctrine/common",
@@ -51,6 +51,11 @@
             "version": "1.1.0"
         },
         {
+            "package": "knplabs/knp-components",
+            "version": "dev-master",
+            "source-reference": "4fb9bc439351cfe32af05cd127bfabf725f11966"
+        },
+        {
             "package": "knplabs/knp-menu",
             "version": "1.1.x-dev",
             "source-reference": "v1.1.1"
@@ -61,10 +66,9 @@
             "source-reference": "v1.1.0"
         },
         {
-            "package": "kriswallsmith/assetic",
+            "package": "knplabs/knp-paginator-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "1.1.x-dev",
-            "alias-version": "1.1.9999999.9999999-dev"
+            "source-reference": "427db8350ae57659645ba35480bbe1194c1c695f"
         },
         {
             "package": "kriswallsmith/assetic",
@@ -88,7 +92,7 @@
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "0813379920dcaa4b06361501f654379383d75f16"
+            "source-reference": "55ad81e65a1023ae07c67075ca49c55556e047bf"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -117,12 +121,6 @@
             "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
         },
         {
-            "package": "symfony/swiftmailer-bridge",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
             "source-reference": "71e1789868665cf94dc7831f645625fd0f70aac6"
@@ -142,12 +140,12 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "8d41b64e7ecd84eab1cfddeaca9462b889f47c97"
+            "source-reference": "3bb7dc0bfa87b2d4db8262be65b5f49cc6a17a9b"
         },
         {
             "package": "toa/twitter-bootstrap-bundle",
             "version": "dev-master",
-            "source-reference": "7448d084d11340f3bb6338b58ef112c076f040cd"
+            "source-reference": "fefbf8055ad74c1cd5f20e96fd2a4d1c343c588f"
         },
         {
             "package": "twig/extensions",
@@ -157,13 +155,13 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "alias-pretty-version": "1.8.x-dev",
-            "alias-version": "1.8.9999999.9999999-dev"
+            "source-reference": "018c52fe59479b65920d18a6461edeb312963f9d"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         }
     ],
     "packages-dev": null,
@@ -180,6 +178,7 @@
         "sensio/distribution-bundle": 20,
         "sensio/framework-extra-bundle": 20,
         "sensio/generator-bundle": 20,
-        "toa/twitter-bootstrap-bundle": 20
+        "toa/twitter-bootstrap-bundle": 20,
+        "knplabs/knp-paginator-bundle": 20
     }
 }

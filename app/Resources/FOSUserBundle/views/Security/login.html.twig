@@ -1,25 +1,27 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
-{% endif %}
+<div class="form-border connection">
+  <form class="form-stacked form-login" action="{{ path("fos_user_security_check") }}" method="post">
+      
+      {% include "GaorenVendorsBundle:Fragment:alert-message.html.twig" %}
+          
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+      <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+      <input class="btn-large big-input" type="text" id="username" name="_username" value="{{ last_username }}" />
 
-    <label for="username"><strong>{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</strong></label>
-    <input class="btn-large" type="text" id="username" name="_username" value="{{ last_username }}" />
+      <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+      <input class="btn-large big-input" type="password" id="password" name="_password" />
 
-    <label for="password"><strong>{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</strong></label>
-    <input class="btn-large" type="password" id="password" name="_password" />
-    
-    <div class="clearfix">
-     <label class="checkbox" for="remember_me"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /><strong>{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</strong></label>
-    </div>
-    
-    <div class="form-actions">
-     <button class="btn btn-large btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" >登录</button>
-    </div>
-</form>
+      <div class="clearfix">
+       <label class="checkbox" for="remember_me"><input type="checkbox" id="remember_me" name="_remember_me" value="on" />{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+      </div>
+
+      <div class="form-actions">
+       <input class="btn btn-large btn-primary btn-long" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+       <a class="pull-right" href="{{ path('fos_user_registration_register')}}">→ {{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</a>
+      </div>
+  </form>
+</div>
 {% endblock fos_user_content %}

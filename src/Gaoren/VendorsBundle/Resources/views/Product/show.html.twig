@@ -1,56 +1,58 @@
 {% extends 'GaorenVendorsBundle::layout.html.twig' %}
 {% block title %}产品查看{% endblock %}
 {% block content %}
+<div class="right-container">
+    <div class="bubble">
+        <h1 class="page-header">{{ 'Product'|trans }}</h1>
 
-<h1 class="page-header">{{ 'Product'|trans }}</h1>
+        <table class="record_properties table table-bordered  table-striped">
+            <tbody>
+                <tr>
+                    <th>序号</th>
+                    <td>{{ entity.id }}</td>
+                </tr>
+                <tr>
+                    <th>名称</th>
+                    <td>{{ entity.name }}</td>
+                </tr>
+                <tr>
+                    <th>价格</th>
+                    <td>{{ entity.price }}</td>
+                </tr>
+                <tr>
+                    <th>描述</th>
+                    <td>{{ entity.description }}</td>
+                </tr>
+                <tr>
+                    <th>创建于</th>
+                    <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>更新于</th>
+                    <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+            </tbody>
+        </table>
 
-<table class="record_properties table table-bordered  table-striped">
-    <tbody>
-        <tr>
-            <th>序号</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>名称</th>
-            <td>{{ entity.name }}</td>
-        </tr>
-        <tr>
-            <th>价格</th>
-            <td>{{ entity.price }}</td>
-        </tr>
-        <tr>
-            <th>描述</th>
-            <td>{{ entity.description }}</td>
-        </tr>
-        <tr>
-            <th>创建于</th>
-            <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-        </tr>
-        <tr>
-            <th>更新与</th>
-            <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-        </tr>
-    </tbody>
-</table>
+            <p>
+                <a class="btn" href="{{ path('product_edit', { 'id': entity.id }) }}">
+                    <i class="icon-pencil"></i>
+                    {{ 'edit'|trans }}
+                </a>
+            </p>
 
-    <p>
-        <a class="btn" href="{{ path('product_edit', { 'id': entity.id }) }}">
-            <i class="icon-pencil"></i>
-            {{ 'edit'|trans }}
-        </a>
-    </p>
+            <form action="{{ path('product_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button class="btn btn-danger" type="submit">
+                    <i class="icon-trash icon-white"></i>
+                    {{ 'delete'|trans }}
+                </button>
+            </form>
 
-    <form action="{{ path('product_delete', { 'id': entity.id }) }}" method="post">
-        {{ form_widget(delete_form) }}
-        <button class="btn btn-danger" type="submit">
-            <i class="icon-trash"></i>
-            {{ 'delete'|trans }}
-        </button>
-    </form>
-
-    <a class="btn" href="{{ path('product') }}">
-        <i class="icon-th-list"></i>
-        {{ 'back to the list'|trans }}
-    </a>
-
+            <a class="btn" href="{{ path('product') }}">
+                <i class="icon-th-list"></i>
+                {{ 'back to the list'|trans }}
+            </a>
+    </div>
+</div>
 {% endblock %}

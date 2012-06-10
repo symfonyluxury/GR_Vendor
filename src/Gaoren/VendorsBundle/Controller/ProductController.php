@@ -26,11 +26,15 @@ class ProductController extends Controller
       public function indexAction()
       {
             $em = $this->getDoctrine()->getManager();
-            $entities = $em->getRepository( 'GaorenVendorsBundle:Product' )->findBy( array('user' => $this->getUser()->getId()) );
+            $dql = "SELECT p FROM GaorenVendorsBundle:Product p WHERE p.user =" . $this->getUser()->getId();
+            $entities = $em->createQuery( $dql );
 
-            return array(
-                    'entities' => $entities,
+            $paginator = $this->get( 'knp_paginator' );
+            $pagination = $paginator->paginate(
+                    $entities, $this->getRequest()->query->get( 'page', 1 ), 10
             );
+
+            return compact( 'pagination' );
       }
 
       /**
@@ -55,8 +59,8 @@ class ProductController extends Controller
             $deleteForm = $this->createDeleteForm( $id );
 
             return array(
-                    'entity' => $entity,
-                    'delete_form' => $deleteForm->createView(),
+                      'entity' => $entity,
+                      'delete_form' => $deleteForm->createView(),
             );
       }
 
@@ -72,8 +76,8 @@ class ProductController extends Controller
             $form = $this->createForm( new ProductType(), $entity );
 
             return array(
-                    'entity' => $entity,
-                    'form' => $form->createView(),
+                      'entity' => $entity,
+                      'form' => $form->createView(),
             );
       }
 
@@ -102,8 +106,8 @@ class ProductController extends Controller
             }
 
             return array(
-                    'entity' => $entity,
-                    'form' => $form->createView(),
+                      'entity' => $entity,
+                      'form' => $form->createView(),
             );
       }
 
@@ -130,9 +134,9 @@ class ProductController extends Controller
             $deleteForm = $this->createDeleteForm( $id );
 
             return array(
-                    'entity' => $entity,
-                    'edit_form' => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
+                      'entity' => $entity,
+                      'edit_form' => $editForm->createView(),
+                      'delete_form' => $deleteForm->createView(),
             );
       }
 
@@ -170,9 +174,9 @@ class ProductController extends Controller
             }
 
             return array(
-                    'entity' => $entity,
-                    'edit_form' => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
+                      'entity' => $entity,
+                      'edit_form' => $editForm->createView(),
+                      'delete_form' => $deleteForm->createView(),
             );
       }
 
@@ -209,8 +213,8 @@ class ProductController extends Controller
       private function createDeleteForm($id)
       {
             return $this->createFormBuilder( array('id' => $id) )
-                        ->add( 'id', 'hidden' )
-                        ->getForm()
+                            ->add( 'id', 'hidden' )
+                            ->getForm()
             ;
       }
 
