@@ -86,6 +86,7 @@ div.connection .form-registration input {
 }
 
 div.connection .form-registration .btn-long {
+    color: #FFF;
     width: 100px;
     height:  auto;
     padding: 10px 20px;

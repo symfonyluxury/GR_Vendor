@@ -1,13 +1,13 @@
-{% block subject %}register your password{% endblock %}
+{% block subject %}激活您的账户{% endblock %}
 
 {% block body_text %}
 {% autoescape false %}
-Hello {{ user.username }} !
+您好 {{ user.username }} !
 
-You can register your email by accessing {{ confirmationUrl }}
+为了激活您的账户,请访问该地址 {{ confirmationUrl }}.
 
-Greetings,
-the GaoRen team
+祝好,
+高人Tech团队
 {% endautoescape %}
 {% endblock %}
 
