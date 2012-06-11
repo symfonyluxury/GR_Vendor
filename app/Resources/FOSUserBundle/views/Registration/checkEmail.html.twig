@@ -2,6 +2,9 @@
 
 {% block fos_user_content %}
     <div class="alert alert-info">
-        <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+        <p>
+            {{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</br>
+            <a href="{{ path("product") }}" class="pull-right">→返回登陆页</a></br>
+        </p>     
     </div>
 {% endblock fos_user_content %}

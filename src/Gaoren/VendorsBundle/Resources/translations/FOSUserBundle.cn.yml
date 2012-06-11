@@ -39,8 +39,8 @@ change_password:
 
 # Registration
 registration:
-    check_email: 邮件已发送至 %email%m, 请进入邮箱并点击链接激活账户.  #An email has been sent to %email%. It contains an activation link you must click to activate your account.
-    confirmed: 恭喜 %username%, 您的账户已被激活.#Congrats %username%, your account is now activated.
+    check_email: 邮件已发送至 %email%, 请进入邮箱并点击链接激活账户.  #An email has been sent to %email%. It contains an activation link you must click to activate your account.
+    confirmed: 恭喜您 %username%, 您的账户已被激活. #Congrats %username%, your account is now activated.
     back: 返回首页  #Back to the originating page.
     submit: 注册  #Register
     flash:

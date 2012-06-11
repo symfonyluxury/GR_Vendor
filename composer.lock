@@ -28,7 +28,7 @@
         {
             "package": "friendsofsymfony/user-bundle",
             "version": "dev-master",
-            "source-reference": "aa7984c7b88463460b8020d31aaf54b668584cc2"
+            "source-reference": "14d5e7a18007c3bd34a7161fa1defd4ac1daa648"
         },
         {
             "package": "jms/aop-bundle",
@@ -58,7 +58,7 @@
         {
             "package": "knplabs/knp-menu",
             "version": "1.1.x-dev",
-            "source-reference": "v1.1.1"
+            "source-reference": "v1.1.2"
         },
         {
             "package": "knplabs/knp-menu-bundle",
@@ -69,6 +69,12 @@
             "package": "knplabs/knp-paginator-bundle",
             "version": "dev-master",
             "source-reference": "427db8350ae57659645ba35480bbe1194c1c695f"
+        },
+        {
+            "package": "kriswallsmith/assetic",
+            "version": "dev-master",
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/assetic",
@@ -118,6 +124,12 @@
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/swiftmailer-bridge",
+            "version": "dev-master",
             "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
         },
         {
@@ -134,13 +146,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/symfony",
-            "version": "dev-master",
-            "source-reference": "3bb7dc0bfa87b2d4db8262be65b5f49cc6a17a9b"
+            "source-reference": "0995b1f28b80f91cfef7b3201840aa3dbcc66ae1"
         },
         {
             "package": "toa/twitter-bootstrap-bundle",
@@ -155,7 +161,7 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "018c52fe59479b65920d18a6461edeb312963f9d"
+            "source-reference": "d4511d02b45725a56c8cc49127244bca640c9d13"
         },
         {
             "package": "twig/twig",

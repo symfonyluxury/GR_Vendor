@@ -70,7 +70,7 @@ div.connection .form-stacked label {
 }
 
 div.connection .form-stacked .big-input {
-    width: 370px;
+    width: 320px;
     height: 35px;
     font-size: 25px;
     color: #808080;
@@ -78,6 +78,7 @@ div.connection .form-stacked .big-input {
 }
 
 div.connection .form-registration input {
+    color: #808080;
     width: 250px;
     height: 30px;
     padding-left: 10px;
@@ -86,13 +87,13 @@ div.connection .form-registration input {
 
 div.connection .form-registration .btn-long {
     width: 100px;
-    padding: 16px 20px;
+    height:  auto;
+    padding: 10px 20px;
 }
 
 div.connection .form-login .btn-long {
     width: 100px;
-    height: 30px;
-    padding: 16px 20px;
+    padding: 10px 20px;
     font-size: 16px;
 }
 
@@ -105,7 +106,7 @@ div.connection form .alert-message{
     text-align: left;
     padding: 5px 15px;
     margin-bottom: 15px;
-    width: 385px;
+    width: 320px;
     font-size: 13px;
 }
 
